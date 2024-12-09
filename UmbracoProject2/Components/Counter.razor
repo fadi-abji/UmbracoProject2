@@ -1,0 +1,36 @@
+﻿@code {
+    private int currentCount = 0;
+
+    protected override Task OnInitializedAsync()
+    {
+        return base.OnInitializedAsync();
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount--;
+    }
+}
+
+<div class="counter">
+    <h3>Counter</h3>
+    <p>Current count: @currentCount</p>
+    <button class="btn btn-primary" @onclick="IncrementCount">Increment</button>
+    <button class="btn btn-secondary" @onclick="DecrementCount">Decrement</button>
+</div>
+
+<style>
+    .counter {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .counter button {
+        margin: 5px;
+    }
+</style>

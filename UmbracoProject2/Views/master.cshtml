@@ -1,5 +1,6 @@
 ﻿@using UmbracoProject2.Pages
 @using UmbracoProject2.Pages.Components
+@using UmbracoProject2.Views
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
 @{
@@ -25,8 +26,8 @@
     </head>
 <body>
     @await Html.CachedPartialAsync("~/Views/Partials/mainNavigation.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
-    <component type="typeof(CounterPage)" render-mode="Server" />
     @RenderBody()
+    <component type="typeof(UmbracoProject2.Pages.Components.CounterPage)" render-mode="Server" />
     @await Html.CachedPartialAsync("~/Views/Partials/footer.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
 
     <!-- Bootstrap core JS-->

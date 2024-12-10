@@ -1,10 +1,11 @@
 ﻿@page "/counter"
+@rendermode InteractiveServer
 
 <h1>Counter Page</h1>
 
 <p>This is a standalone counter page.</p>
 
-<Counter />
+<Counter @rendermode="InteractiveServer"/>
 
 <style>
     h1 {

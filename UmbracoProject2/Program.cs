@@ -38,6 +38,6 @@ app.UseUmbraco()
 //Blazor integration
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
-app.MapFallbackToPage("/_BlazorHost"); // This should match the file name in the Pages folder
+app.MapFallbackToPage("/_BlazorHost");
 
 await app.RunAsync();

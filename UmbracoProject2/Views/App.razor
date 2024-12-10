@@ -1,8 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
+@using UmbracoProject2.Shared
 
 <Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="routeData" />
+            <RouteView RouteData="routeData" DefaultLayout="@typeof(SimpleLayout)"/>
     </Found>
     <NotFound>
         <h1>Page not found</h1>

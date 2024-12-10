@@ -1,7 +1,12 @@
+using UmbracoProject2.Views;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 //Blazor integration
-builder.Services.AddServerSideBlazor();
+builder.Services.AddRazorPages();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
+
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -13,9 +18,6 @@ builder.CreateUmbracoBuilder()
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
-
-//Blazor integration
-app.MapBlazorHub();
 
 
 app.UseHttpsRedirection();
@@ -32,5 +34,10 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
+
+//Blazor integration
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
+app.MapFallbackToPage("/_BlazorHost"); // This should match the file name in the Pages folder
 
 await app.RunAsync();

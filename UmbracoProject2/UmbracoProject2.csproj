@@ -20,6 +20,12 @@
     <Folder Include="wwwroot\media\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Components\CounterPage.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- Razor files are needed for the backoffice to work correctly -->
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>

@@ -1,11 +1,22 @@
 ﻿@page "/counter"
+@using Telerik.Blazor.Components
+@using Wengine.Components.Core.Inputs
+@using Wengine.Components.Core.Predefined
 @rendermode InteractiveServer
 
 <h1>Counter Page</h1>
 
 <p>This is a standalone counter page.</p>
-
 <Counter @rendermode="InteractiveServer"/>
+<WxrDropDownListArticle @rendermode="InteractiveServer"/>
+
+
+<WxrStringInput @bind-Value="name" Placeholder="Enter your name" />
+
+
+@code {
+    private string name;
+}
 
 <style>
     h1 {

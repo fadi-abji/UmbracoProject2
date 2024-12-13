@@ -10,7 +10,7 @@
             {
                 if (!(content.HasProperty("excludeFromSitemap") && content.Value<bool>("excludeFromSitemap")))
                 {
-<url><loc>@content.Url(mode:UrlMode.Absolute)</loc><lastmod>@content.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
+                    <url><loc>@content.Url(mode:UrlMode.Absolute)</loc><lastmod>@content.UpdateDate.ToString("yyyy-MM-ddTHH:mm:sszzz")</lastmod></url>
                     if (content.Children.Any(x => x.IsVisible()))
                     {
                         RenderChildPages(content.Children);

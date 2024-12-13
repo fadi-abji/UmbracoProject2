@@ -36,14 +36,16 @@
     <link rel="stylesheet" href="_content/Wengine.Components.Core/css/bracket.simple-white.css">
     <link rel="stylesheet" href="_content/Wengine.Components.Core/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="_content/Telerik.UI.for.Blazor/css/kendo-theme-bootstrap/all.css">
-    <!-- Core theme CSS (includes Bootstrap)-->
-    @await SmidgeHelper.CssHereAsync(debug: false)
-    <component type="typeof(Microsoft.AspNetCore.Components.Web.HeadOutlet)" render-mode="ServerPrerendered" />
+  
     <!-- Wengine js -->
     <script src="_content/Wengine.Components.Core/js/jquery/jquery.min.js"></script>
     <script src="_content/Telerik.UI.for.Blazor/js/telerik-blazor.js"></script>
     <script src="_content/Wengine.Components.Core/js/wxr-bracket.js"></script>
     <script src="_content/Wengine.Components.Core/js/wxr-app.js"></script>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    @await SmidgeHelper.CssHereAsync(debug: false)
+    <component type="typeof(Microsoft.AspNetCore.Components.Web.HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
     @await Html.CachedPartialAsync("~/Views/Partials/mainNavigation.cshtml", model: Model, cacheTimeout: TimeSpan.FromMinutes(60))
